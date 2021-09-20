@@ -214,6 +214,7 @@
           >
             <button
               class="
+                outline-none
                 w-24
                 p-2
                 rounded
@@ -221,10 +222,10 @@
                 font-semibold
                 bg-blue-500
                 text-white
-                focus:ring-2 focus:ring-blue-600
+                focus:ring-2 focus:ring-offset-1
               "
             >
-              Sign in
+              Sign up
             </button>
             <h1>
               <router-link

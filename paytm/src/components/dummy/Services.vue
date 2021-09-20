@@ -1,7 +1,14 @@
 <template>
   <div class="container mx-auto my-5">
     <div
-      class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 mx-auto space-x-4"
+      class="
+        grid grid-cols-1
+        sm:grid-cols-2
+        lg:grid-cols-4
+        mx-3
+        gap-4
+        md:space-y-0
+      "
     >
       <div
         v-for="item in data"

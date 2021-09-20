@@ -113,6 +113,7 @@
             <button
               @click.prevent="login"
               class="
+                outline-none
                 w-24
                 p-2
                 rounded
@@ -120,7 +121,7 @@
                 font-semibold
                 bg-blue-500
                 text-white
-                focus:ring-2 focus:ring-blue-600
+                focus:ring-2 focus:ring-offset-1
               "
             >
               Sign in
@@ -158,7 +159,7 @@ export default {
           .login({ email: this.email, password: this.password })
           .then((res) => {
             console.log(res.data);
-            this.$store.commit("isLoggedIn", true); 
+            this.$store.commit("isLoggedIn", true);
             this.$store.commit("setToken", res.data.jwttoken);
             this.$store.commit("setUserID", res.data.userId);
             this.$router.push("/");

@@ -4,9 +4,7 @@
     <div class="mt-20">
       <router-view></router-view>
     </div>
-    <div>
-      <Services />
-    </div>
+    <Services />
     <Footer />
   </div>
 </template>

@@ -22,7 +22,7 @@
         </router-link>
       </div>
       <div class="hidden md:block">
-        <ul class="md:space-x-4 lg:space-x-8 xl:space-x-24">
+        <ul class="md:space-x-2 lg:space-x-6 xl:space-x-20">
           <li
             class="
               inline-block
@@ -85,7 +85,7 @@
             "
           >
             <router-link
-              to="/tranfermoney"
+              to="/moneytransfer"
               custom
               v-slot="{ href, navigate, isExactActive }"
             >
@@ -342,7 +342,7 @@
             </li>
             <li class="text-black font-semibold">
               <router-link
-                to="/tranfermoney"
+                to="/moneytransfer"
                 custom
                 v-slot="{ href, navigate, isExactActive }"
                 class="cursor-pointer"
