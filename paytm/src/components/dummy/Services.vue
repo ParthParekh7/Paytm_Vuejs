@@ -1,5 +1,5 @@
 <template>
-  <div class="container mx-auto my-5">
+  <div class="mx-5 my-5">
     <div
       class="
         grid grid-cols-1

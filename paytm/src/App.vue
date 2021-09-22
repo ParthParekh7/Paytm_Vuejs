@@ -13,6 +13,7 @@
 import Navbar from "./components/Navbar&Footer/Navbar.vue";
 import Footer from "./components/Navbar&Footer/Footer.vue";
 import Services from "./components/dummy/Services.vue";
+
 export default {
   name: "App",
   components: {

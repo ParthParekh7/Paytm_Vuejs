@@ -220,10 +220,10 @@
                 rounded
                 text-center
                 font-semibold
-                bg-blue-500
                 text-white
                 focus:ring-2 focus:ring-offset-1
               "
+              style="background-color: #00baf2"
             >
               Sign up
             </button>

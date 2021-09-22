@@ -2,6 +2,8 @@
 const Home = () => import("../pages/Home.vue");
 const Error = () => import("../pages/404.vue");
 const AllProducts = () => import("../pages/Products/AllCateProducts.vue");
+const CateWiseProducts = () => import("../pages/Products/CateWiseProducts.vue");
+const SingleProduct = () => import("../pages/Products/SingleProduct.vue");
 
 /*****************     SIGNUP SIGNIN PAGE       ***************/
 const Signin = () => import("../pages/Signin&Signup/SignIn.vue");
@@ -55,7 +57,18 @@ export const routes = [
     component: AllProducts,
     meta: { title: "Shopping" },
   },
-
+  {
+    path: "/product/:id",
+    name: CateWiseProducts,
+    component: CateWiseProducts,
+    meta: { title: "Shopping" },
+  },
+  {
+    path: "/product/:id/:pid",
+    name: SingleProduct,
+    component: SingleProduct,
+    meta: { title: "Single Product" },
+  },
   {
     path: "/:pathMatch(.*)*",
     name: "NotFound",

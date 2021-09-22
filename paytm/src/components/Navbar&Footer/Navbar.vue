@@ -22,7 +22,7 @@
         </router-link>
       </div>
       <div class="hidden md:block">
-        <ul class="md:space-x-2 lg:space-x-6 xl:space-x-20">
+        <ul class="md:space-x-2 lg:space-x-6 xl:space-x-16">
           <li
             class="
               inline-block

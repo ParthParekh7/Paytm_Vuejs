@@ -119,10 +119,10 @@
                 rounded
                 text-center
                 font-semibold
-                bg-blue-500
                 text-white
                 focus:ring-2 focus:ring-offset-1
               "
+              style="background-color: #00baf2"
             >
               Sign in
             </button>
@@ -158,7 +158,7 @@ export default {
         paytmServices
           .login({ email: this.email, password: this.password })
           .then((res) => {
-            console.log(res.data);
+            // console.log(res.data);
             this.$store.commit("isLoggedIn", true);
             this.$store.commit("setToken", res.data.jwttoken);
             this.$store.commit("setUserID", res.data.userId);

@@ -1,75 +1,91 @@
 <template>
-  <div
-    class="
-      flex
-      items-center
-      justify-center
-      bg-gray-50
-      py-12
-      px-4
-      sm:px-6
-      lg:px-8
-    "
-  >
-    <div v-if="isLoading" class="mt-20">
-      <img
-        src="https://cdn.lowgif.com/full/d35d94c490e598e3-loading-gif-transparent-loading-gif.gif"
-        class="h-16"
-        alt=""
-      />
-    </div>
+  <div>
+    <button
+      class=""
+      @click="
+        () => {
+          this.$router.back();
+        }
+      "
+    >
+      <i class="fas fa-arrow-left text-xl xs:w-12 sm:w-32"></i>
+    </button>
+    <div
+      class="
+        flex
+        items-center
+        justify-center
+        bg-gray-50
+        py-6
+        px-4
+        sm:px-6
+        lg:px-8
+      "
+    >
+      <div v-if="isLoading" class="mt-20">
+        <img
+          src="https://cdn.lowgif.com/full/d35d94c490e598e3-loading-gif-transparent-loading-gif.gif"
+          class="h-16"
+          alt=""
+        />
+      </div>
 
-    <div v-else class="max-w-xl w-full space-y-8 space-x-3 border p-3">
-      <img
-        src="https://static.thenounproject.com/png/936925-200.png"
-        alt=""
-        class="h-8 sm:h-16 inline-block"
-      />
-      <span class="sm:text-3xl text-base font-serif text-gray-600 align-middle"
-        >Add money to your wallet</span
+      <div
+        v-else
+        class="max-w-xl w-full space-y-8 space-x-3 border p-3 shadow-xl"
       >
+        <img
+          src="https://static.thenounproject.com/png/936925-200.png"
+          alt=""
+          class="h-8 sm:h-16 inline-block"
+        />
+        <span
+          class="sm:text-3xl text-base font-serif text-gray-600 align-middle"
+          >Add money to your wallet</span
+        >
 
-      <form @submit.prevent="addmoney">
-        <div class="flex-col my-2 space-y-3">
-          <div v-if="message.length > 0" class="text-red-600 text-sm">
-            {{ message }}
+        <form @submit.prevent="addmoney">
+          <div class="flex-col my-2 space-y-3">
+            <div v-if="message.length > 0" class="text-red-600 text-sm">
+              {{ message }}
+            </div>
+            <div>
+              <input
+                type="number"
+                v-model.number="amount"
+                @focus="setMessage"
+                placeholder="0"
+                name="amount"
+                class="
+                  outline-none
+                  border
+                  w-full
+                  rounded
+                  p-2
+                  border-gray-300
+                  focus:border-blue-300
+                "
+              />
+            </div>
+            <div>
+              <button
+                class="
+                  w-44
+                  p-2
+                  outline-none
+                  rounded
+                  text-white
+                  focus:ring-offset-2 focus:ring-2
+                  font-medium
+                "
+                style="background-color: #012b72"
+              >
+                Add Money
+              </button>
+            </div>
           </div>
-          <div>
-            <input
-              type="number"
-              v-model.number="amount"
-              @focus="setMessage"
-              placeholder="0"
-              name="amount"
-              class="
-                outline-none
-                border
-                w-full
-                rounded
-                p-2
-                border-gray-300
-                focus:border-blue-300
-              "
-            />
-          </div>
-          <div>
-            <button
-              class="
-                w-44
-                p-2
-                outline-none
-                rounded
-                text-white
-                focus:ring-offset-2 focus:ring-2
-                font-medium
-              "
-              style="background-color: #012b72"
-            >
-              Add Money
-            </button>
-          </div>
-        </div>
-      </form>
+        </form>
+      </div>
     </div>
   </div>
 </template>
