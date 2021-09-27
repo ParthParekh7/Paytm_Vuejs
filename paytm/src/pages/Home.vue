@@ -1,7 +1,7 @@
 <template>
   <div>
     <Links />
-    <!-- <Slider /> -->
+    <Slider />
     <div class="border sm:mx-10 mt-10">
       <FeaturedProductList
         :item="featuredmobiles"
@@ -27,7 +27,7 @@
 
 <script>
 import PaytmServices from "../Services/paytmServices";
-// import Slider from "../components/Slider.vue";
+import Slider from "../components/dummy/Slider.vue";
 import Links from "../components/dummy/Links.vue";
 import FeaturedProductList from "../components/Products/FeaturedProductList.vue";
 export default {
@@ -61,7 +61,7 @@ export default {
       .catch((error) => console.log(error));
   },
   components: {
-    // Slider,
+    Slider,
     Links,
     FeaturedProductList,
   },

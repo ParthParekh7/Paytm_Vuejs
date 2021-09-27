@@ -8,7 +8,7 @@
     </h5>
     <div class="flex justify-evenly">
       <h5 class="xs:text-sm sm:text-base md:text-xl" v-if="item.discount > 0">
-        <del class="xs:text-lg font-semibold">
+        <del class="font-semibold">
           {{ item.ProductPrice }}
         </del>
         <i class="fas fa-rupee-sign align-middle"></i>
@@ -26,7 +26,16 @@
     </div>
     <div class="my-2 mx-5">
       <h5
-        class="w-24 text-center p-1 rounded-full text-white font-semibold"
+        class="
+          w-24
+          text-center
+          p-1
+          rounded-full
+          text-white
+          font-semibold
+          xs:text-sm
+          sm:text-base
+        "
         style="background-color: #00baf2"
       >
         <span> {{ item.Rating }} /5 </span><i class="far fa-star"></i>
@@ -38,6 +47,7 @@
         absolute
         top-0
         left-0
+        text-base
         p-2
         font-semibold
         text-red-500

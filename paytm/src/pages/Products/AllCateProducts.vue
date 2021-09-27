@@ -1,14 +1,7 @@
 <template>
   <div class="mt-24">
     <div>
-      <button
-        class=""
-        @click="
-          () => {
-            this.$router.back();
-          }
-        "
-      >
+      <button @click="$router.back()">
         <i class="fas fa-arrow-left text-xl xs:w-12 sm:w-32"></i>
       </button>
     </div>
@@ -158,7 +151,6 @@ export default {
 
       let tempData = [...this.items];
       if (name == "search") {
-        console.log(value);
         if (value.length > 0) {
           tempData = tempData.filter((item) => {
             let tempSearch = value.toLowerCase();

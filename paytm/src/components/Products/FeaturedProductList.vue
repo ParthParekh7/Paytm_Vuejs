@@ -1,12 +1,12 @@
 <template>
-  <div class="xs:mx-0 md:mx-10 lg:mx-20 p-3">
+  <div class="xs:mx-0 md:mx-10 lg:mx-10 p-3">
     <div class="flex justify-between items-center">
       <div class="flex items-center space-x-3 my-2">
         <img :src="imagePath" alt="logo" class="xs:h-8 sm:h-20" />
         <h1
           class="
             tracking-widest
-            xs:text-xl
+            xs:text-sm
             sm:text-3xl
             font-serif
             text-gray-700
@@ -26,7 +26,7 @@
             font-semibold
             shadow
             bg-blue-900
-            hover:bg-green-600
+            hover:bg-blue-800
           "
           @click="$router.push(path)"
         >

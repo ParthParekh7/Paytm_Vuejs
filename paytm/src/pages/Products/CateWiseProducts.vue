@@ -1,14 +1,7 @@
 <template>
   <div>
-    <button
-      class=""
-      @click="
-        () => {
-          this.$router.back();
-        }
-      "
-    >
-      <i class="fas fa-arrow-left text-xl xs:w-12"></i>
+    <button @click="$router.back()">
+      <i class="fas fa-arrow-left text-xl xs:w-12 sm:w-32"></i>
     </button>
     <div class="grid grid-col-1 md:grid-cols-4">
       <div class="p-5 md:col-span-1">
@@ -76,7 +69,7 @@
             class="mx-auto text-2xl text-red-500"
             v-if="filterItems.length === 0"
           >
-            not available
+            Not available
           </div>
           <div
             class="border hover:shadow-2xl p-3 relative"
@@ -160,12 +153,10 @@ export default {
         this.price = this.max;
       }
       if (name === "price") {
-        console.log(this.price);
         //filter price
         this.search = "";
         tempData = tempData.filter((item) => item.ProductPrice <= value);
         // setValues({ ...values, price: value, category: "" });
-        console.log(tempData);
       }
       this.filterItems = tempData;
     },

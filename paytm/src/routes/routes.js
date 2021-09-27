@@ -13,6 +13,8 @@ const SignUp = () => import("../pages/Signin&Signup/SignUp.vue");
 const AddMoney = () => import("../pages/User/AddMoney.vue");
 const MoneyTransfer = () => import("../pages/User/MoneyTransfer.vue");
 const Passbook = () => import("../pages/User/Passbook.vue");
+const Payment = () => import("../pages/User/Payment.vue");
+const MyAccount = () => import("../pages/User/MyAccount.vue");
 
 export const routes = [
   {
@@ -50,6 +52,18 @@ export const routes = [
     name: "Money Transfer",
     component: MoneyTransfer,
     meta: { title: "Money Transfer", requiresAuth: true },
+  },
+  {
+    path: "/myaccount",
+    name: "My Account",
+    component: MyAccount,
+    meta: { title: "My Account", requiresAuth: true },
+  },
+  {
+    path: "/payment/:id",
+    name: "Payment",
+    component: Payment,
+    meta: { title: "Payment", requiresAuth: true },
   },
   {
     path: "/products",

@@ -13,10 +13,14 @@ const router = new VueRouter({
   linkExactActiveClass: "exact-active",
 });
 router.beforeEach((to, from, next) => {
-  //   console.log("Before Each (Global) each", to, from);
-  next();
-  if (to.meta.requiresAuth && !store.getters.isLoggedIn) {
-    router.push("/signin");
+  if (
+    to.meta.requiresAuth &&
+    !store.getters.isLoggedIn &&
+    store.getters.getToken != ""
+  ) {
+    next({ name: "signin" });
+  } else {
+    next();
   }
 });
 router.afterEach((to) => {

@@ -1,23 +1,18 @@
 <template>
   <div>
-    <button
-      class=""
-      @click="
-        () => {
-          this.$router.back();
-        }
-      "
-    >
+    <button @click="$router.back()">
       <i class="fas fa-arrow-left text-xl xs:w-12 sm:w-32"></i>
     </button>
+
     <div
       class="
         flex
         items-center
         justify-center
         bg-gray-50
-        py-12
-        px-4
+        xs:py-2
+        sm:py-4
+        xs:px-1
         sm:px-6
         lg:px-8
       "

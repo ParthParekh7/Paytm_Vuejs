@@ -5,8 +5,9 @@
       items-center
       justify-center
       bg-gray-50
-      py-12
-      px-4
+      xs:py-4
+      sm:py-12
+      xs:px-1
       sm:px-6
       lg:px-8
     "
@@ -297,20 +298,21 @@ export default {
         email: this.user.email,
         password: this.user.password,
         mobileno: parseInt(this.user.mobileno),
+        image: "logo",
       };
-      //   console.log(userData);
+      // console.log(userData);
       paytmServices.signup(userData).then((res) => {
         if (res.status == 200) {
           if (res.data == "Email id already exists") {
             this.message = "Email id already exists";
           }
           if (res.data == "Register Successfully Done") {
-            console.log("yes");
+            // console.log("yes");
 
             paytmServices
               .login({ email: userData.email, password: userData.password })
               .then((res) => {
-                console.log(res.data);
+                // console.log(res.data);
                 this.$store.commit("isLoggedIn", true);
                 this.$store.commit("setToken", res.data.jwttoken);
                 this.$store.commit("setUserID", res.data.userId);

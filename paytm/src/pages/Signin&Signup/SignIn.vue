@@ -5,8 +5,9 @@
       items-center
       justify-center
       bg-gray-50
-      py-12
-      px-4
+      xs:py-4
+      sm:py-12
+      xs:px-2
       sm:px-6
       lg:px-8
     "
@@ -25,7 +26,14 @@
 
           <p
             v-if="message.length > 0"
-            class="mt-3 text-center text-xl font-normal text-red-600"
+            class="
+              mt-3
+              text-center
+              xs:text-xs
+              sm:text-xl
+              font-normal
+              text-red-600
+            "
           >
             {{ message }}
           </p>

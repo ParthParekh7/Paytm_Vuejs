@@ -378,24 +378,43 @@
                 ></router-link
               >
             </li>
-
-            <li
-              class="
-                text-black
-                inline-block
-                font-semibold
-                transition
-                cursor-pointer
-                border-b-4 border-opacity-0
-                hover:border-opacity-100
-                p-2
-                border-blue-400
-              "
-              @click="logout"
-              v-if="$store.getters.isLoggedIn"
-            >
-              Logout
-            </li>
+            <template v-if="$store.getters.isLoggedIn">
+              <li class="text-black font-semibold">
+                <router-link
+                  to="/myaccount"
+                  custom
+                  v-slot="{ href, navigate, isExactActive }"
+                  class="cursor-pointer"
+                >
+                  <a
+                    :href="href"
+                    @click="navigate"
+                    :class="[
+                      isExactActive
+                        ? 'transition  border-b-4 p-2 font-bold border-blue-400'
+                        : 'transition border-b-4  border-opacity-0 hover:border-opacity-100 p-2  border-blue-400',
+                    ]"
+                    >My Account</a
+                  ></router-link
+                >
+              </li>
+              <li
+                class="
+                  text-black
+                  inline-block
+                  font-semibold
+                  transition
+                  cursor-pointer
+                  border-b-4 border-opacity-0
+                  hover:border-opacity-100
+                  p-2
+                  border-blue-400
+                "
+                @click="logout"
+              >
+                Logout
+              </li>
+            </template>
             <template v-else>
               <li class="text-black font-semibold">
                 <router-link

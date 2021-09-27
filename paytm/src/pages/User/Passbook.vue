@@ -1,19 +1,11 @@
 <template>
   <div>
-    <button
-      class=""
-      @click="
-        () => {
-          this.$router.back();
-        }
-      "
-    >
+    <button @click="$router.back()">
       <i class="fas fa-arrow-left text-xl xs:w-12 sm:w-32"></i>
     </button>
     <div
       class="
-        sm:p-10
-        my-2
+        sm:p-3
         flex
         justify-center
         items-center
@@ -52,9 +44,9 @@
           <table v-else class="table-fixed border mt-4 p-2 w-full shadow-xl">
             <thead class="bg-gray-800 text-white">
               <tr class="">
-                <th class="p-3 w-1/4">#</th>
-                <th class="p-3 w-1/2">Transactions</th>
-                <th class="p-3 w-1/4">Amount</th>
+                <th class="w-5 p-3">#</th>
+                <th class="">Transactions</th>
+                <th class="">Amount</th>
               </tr>
             </thead>
             <tbody class="text-center">
@@ -62,7 +54,6 @@
                 v-for="(item, index) in transactions"
                 :key="index"
                 class="
-                  p-2
                   border-b
                   my-2
                   border-gray-300
@@ -71,7 +62,7 @@
                   hover:bg-gray-300
                 "
               >
-                <td class="">{{ index }}</td>
+                <td class="inline-block border-bl border">{{ index + 1 }}</td>
                 <td class="">
                   <h5
                     v-if="item.paymentType === 'Money Added'"
@@ -167,9 +158,9 @@
           <table v-else class="table-fixed border mt-4 p-2 w-full">
             <thead class="bg-gray-800 text-white">
               <tr class="">
-                <th class="p-3">#</th>
-                <th class="p-3">Orders</th>
-                <th class="p-3">Amount</th>
+                <th class="w-5 p-3">#</th>
+                <th class="">Orders</th>
+                <th class="">Amount</th>
               </tr>
             </thead>
             <tbody class="text-center">
@@ -186,7 +177,7 @@
                   hover:bg-gray-300
                 "
               >
-                <td class="">{{ index }}</td>
+                <td class="">{{ index + 1 }}</td>
                 <td>
                   <h5>{{ item.ProductName }}</h5>
                   <h5>
@@ -214,8 +205,8 @@
                   </h5>
                   <div className="text-muted flex mt-2 justify-content-center">
                     <small class="text-xs text-gray-600">
-                      Date : {{ date(item.transactionDate) + " " }} , Time :
-                      {{ time(item.transactionDate) }}
+                      Date : {{ date(item.OrderDate) + " " }} , Time :
+                      {{ time(item.OrderDate) }}
                     </small>
                   </div>
                 </td>
